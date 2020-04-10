@@ -46,11 +46,11 @@
         return;
       }
 
-      this.verify().then(() => {
+ //     this.verify().then(() => {
         this.getData();
-      }).catch(() => {
-        this.$router.push("/login");
-      });
+      // }).catch(() => {
+      //   this.$router.push("/login");
+      // });
     },
     methods: {
       getData() {

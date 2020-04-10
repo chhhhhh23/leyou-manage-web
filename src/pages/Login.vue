@@ -26,15 +26,15 @@
               <v-card-actions>
                 <v-spacer></v-spacer>
                 <v-btn color="primary" @click="doLogin">登录</v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-flex>
-        </v-layout>
-      </v-container>
+    </v-card-actions>
+    </v-card>
+    </v-flex>
+    </v-layout>
+    </v-container>
     </v-content>
     <v-dialog v-model="dialog" width="300px">
       <v-alert icon="warning" color="error" :value="true">
-      用户名和密码不能为空
+        用户名和密码不能为空
       </v-alert>
     </v-dialog>
   </v-app>
@@ -58,27 +58,28 @@
     },
     methods: {
       doLogin() {
-        if (!this.username || !this.password) {
-          this.dialog = true;
-          return false;
-        }
-        const form ={};
-        form.username = this.username;
-        form.password = this.password;
-
-        this.$http.post("/auth/accredit", this.$qs.stringify(form)).then(resp =>{
-          if (resp.status === 200){
-             //页面跳转
-            if (this.backPath === "/"){
-              this.$router.push("/index/dashboard");
-            } else {
-              this.$router.push(this.backPath);
-            }
-
-          }
-        }).catch(() => {
-          this.$message.error("账号或者密码错误！");
-        });
+        this.$router.push("/index/dashboard");
+        // if (!this.username || !this.password) {
+        //   this.dialog = true;
+        //   return false;
+        // }
+        // const form ={};
+        // form.username = this.username;
+        // form.password = this.password;
+        //
+        // this.$http.post("/auth/accredit", this.$qs.stringify(form)).then(resp =>{
+        //   if (resp.status === 200){
+        //      //页面跳转
+        //     if (this.backPath === "/"){
+        //       this.$router.push("/index/dashboard");
+        //     } else {
+        //       this.$router.push(this.backPath);
+        //     }
+        //
+        //   }
+        // }).catch(() => {
+        //   this.$message.error("账号或者密码错误！");
+        // });
       }
     }
   };

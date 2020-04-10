@@ -107,7 +107,7 @@
 
 <script>
   import config from '../../config'
-//  import {treeData,phoneSpec} from "../../mockDB";
+  //  import {treeData,phoneSpec} from "../../mockDB";
 
   export default {
     name: "v-template",
@@ -183,7 +183,7 @@
         //模板删除
         if (this.specifications.length === 0){
           //console.log("删除:"+this.currentNode.id);
-          this.verify().then(() => {
+     //     this.verify().then(() => {
             this.$http.delete("/item/spec/"+this.currentNode.id).then(() => {
               this.dialog = false;
               this.$message.success("删除成功！");
@@ -191,11 +191,11 @@
             }).catch(() => {
               this.$message.error("删除失败");
             });
-          }).catch(() => {
-            this.$router.push("/login");
-          });
+         // }).catch(() => {
+      //   this.$router.push("/login");
+      // });
         }else {
-          this.verify().then(() => {
+     //     this.verify().then(() => {
             this.$http({
               method: this.oldSpec.length === 0 ? 'post' : 'put',
               url: '/item/spec',
@@ -210,9 +210,9 @@
             }).catch(() => {
               this.$message.error("保存失败！")
             });
-          }).catch(() => {
-            this.$router.push("/login");
-          });
+         // }).catch(() => {
+      //   this.$router.push("/login");
+      // });
         }
       },
       deleteGroup(i) {

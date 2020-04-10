@@ -34,11 +34,11 @@
       }
     },
     created(){
-      this.verify().then(() => {
+ //     this.verify().then(() => {
 
-      }).catch(() => {
-        this.$router.push("/login");
-      });
+          // }).catch(() => {
+      //   this.$router.push("/login");
+      // });
     },
     mounted(){
       this.$nextTick(() => {

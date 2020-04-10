@@ -72,7 +72,7 @@
                 const {categories, ... rest}=this.brand;
                 rest.categories=categories.map(c => c.id).join(",");
 
-                this.verify().then(() => {
+           //     this.verify().then(() => {
                   this.$http({
                     method:this.isEdit ? 'put' :'post',
                     url:"/item/brand",
@@ -89,9 +89,9 @@
                       this.$message.success("保存失败！");
                     }
                   );
-                }).catch(() => {
-                  this.$router.push("/login");
-                });
+               // }).catch(() => {
+      //   this.$router.push("/login");
+      // });
               }
           },
         clear(){

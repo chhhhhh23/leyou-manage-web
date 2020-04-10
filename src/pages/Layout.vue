@@ -138,11 +138,11 @@
           this.menuMap[p1][i.path.slice(1)] = i.title;
         })
       });
-      this.verify().then((resp) => {
-        this.username = resp.data.username;
-      }).catch(() => {
-        this.$router.push("/login");
-      });
+      // this.verify().then((resp) => {
+      //   this.username = resp.data.username;
+          // }).catch(() => {
+      //   this.$router.push("/login");
+      // });
     }
   }
 </script>

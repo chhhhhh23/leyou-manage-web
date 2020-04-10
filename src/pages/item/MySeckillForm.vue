@@ -332,7 +332,7 @@
             });
           }
         });
-        this.verify().then(() => {
+   //     this.verify().then(() => {
           this.$http({
             url:"/item/goods/seckill/add",
             method:"post",
@@ -352,9 +352,9 @@
           }).catch(() => {
             this.$message.error("添加失败！");
           });
-        }).catch(() => {
-          this.$router.push("/login");
-        });
+       // }).catch(() => {
+      //   this.$router.push("/login");
+      // });
       }
     }
   }

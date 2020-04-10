@@ -191,7 +191,8 @@
   import 'quill/dist/quill.bubble.css'
 
   import {quillEditor} from 'vue-quill-editor'
-    export default {
+
+  export default {
       name: "MyGoodsForm",
       data () {
         return {
@@ -551,7 +552,7 @@
           goodsParams.spuDetail.specifications = JSON.stringify(specs);
           goodsParams.spuDetail.specTemplate = JSON.stringify(specTemplate);
 
-          this.verify().then(() => {
+     //     this.verify().then(() => {
             this.$http({
               url:"/item/goods",
               method: this.isEdit ? 'put':'post',
@@ -566,9 +567,9 @@
             }).catch(() => {
               this.$message.error("保存失败！");
             });
-          }).catch(() => {
-            this.$router.push("/login");
-          });
+         // }).catch(() => {
+      //   this.$router.push("/login");
+      // });
         },
         clear(){
           //清空表单
